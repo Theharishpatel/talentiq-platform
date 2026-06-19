@@ -1,8 +1,8 @@
 # Documentation
 
-This folder contains all project documentation.
+## This folder contains all project documentation.
 
-phase-1/
-phase-2/
-architecture/
-meeting-notes/
+* phase-1/
+* phase-2/
+* architecture/
+* meeting-notes/
