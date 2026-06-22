@@ -75,7 +75,7 @@ class RedrobSignals(BaseModel):
     willing_to_relocate: bool
 
     github_activity_score: float = Field(
-    ge=1,
+    ge=-1,
     le=100
 )
 
