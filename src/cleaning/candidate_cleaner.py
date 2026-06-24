@@ -1,24 +1,42 @@
 """
-Candidate clening logic.
+Candidate cleaning logic.
 """
 
 from copy import deepcopy
 
 from src.cleaning.rules import (
-    replace_negative_one,
     clean_string,
 )
 
-def clean_candidate(candidate: dict) -> dict:
-    """
-    Clean one candidate record.
-    """
+from src.cleaning.skill_cleaner import (
+    clean_skills,
+)
 
-    candidate = deepcopy(candidate)
+from src.cleaning.signal_cleaner import (
+    clean_signals,
+)
 
-    #------- profile -----
+from src.cleaning.title_cleaner import (
+    clean_title,
+)
 
-    profile = candidate.get("profile", {})
+from src.cleaning.location_cleaner import (
+    clean_location,
+)
+
+
+def clean_candidate(
+    candidate: dict,
+) -> dict:
+
+    candidate = deepcopy(
+        candidate
+    )
+
+    profile = candidate.get(
+        "profile",
+        {}
+    )
 
     if "headline" in profile:
         profile["headline"] = clean_string(
@@ -30,48 +48,36 @@ def clean_candidate(candidate: dict) -> dict:
             profile["summary"]
         )
 
-    #------ skills ------
-    skills = candidate.get(
-        "skills",
-        []
-    )
-
-    seen = set()
-    cleaned_skills = []
-
-    for skill in skills:
-
-        name = clean_string(
-            skill.get("name")
-        )
-
-        if not name:
-            continue
-
-        normalized = name.lower()
-
-        if normalized in seen:
-            continue
-
-        seen.add(normalized)
-
-        skill["name"] = normalized
-
-        cleaned_skills.append(skill)
-
-    candidate["skills"] = cleaned_skills
-
-    #------ signals ------
-
-    signals = candidate.get(
-        "redrob_signals",
-        {}
-    )
-
-    if "github_activity_score" in signals:
-        signals["github_activity_score"] = (
-            replace_negative_one(
-                signals["github_activity_score"]
+    if "current_title" in profile:
+        profile["current_title"] = (
+            clean_title(
+                profile["current_title"]
             )
         )
-    return candidate  
+
+    if "location" in profile:
+        profile["location"] = (
+            clean_location(
+                profile["location"]
+            )
+        )
+
+    candidate["skills"] = (
+        clean_skills(
+            candidate.get(
+                "skills",
+                []
+            )
+        )
+    )
+
+    candidate["redrob_signals"] = (
+        clean_signals(
+            candidate.get(
+                "redrob_signals",
+                {}
+            )
+        )
+    )
+
+    return candidate

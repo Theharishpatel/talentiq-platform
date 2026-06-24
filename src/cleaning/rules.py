@@ -14,7 +14,7 @@ def replace_negative_one(value):
 
 def clean_string(value):
     """
-    Trime whitespcae.
+    clean text values Trime whitespcae.
     """
 
     if value is None:
@@ -23,6 +23,8 @@ def clean_string(value):
     value = str(value)
 
     value = value.strip()
+
+    value = " ".join(value.split())
 
     if value == "":
         return None
