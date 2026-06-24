@@ -12,6 +12,8 @@ __pycache__/
 
 # raw datasets
 data/raw/*.jsonl
+data/processed/*.jsonl
+
 
 data/reports/*.csv
 data/reports/*.json
