@@ -59,6 +59,19 @@
 
 ---
 
+# Data Profiling
+
+- [x] Profile skills
+- [x] Profile companies
+- [x] Profile titles
+- [x] Profile locations
+- [x] Profile education
+- [x] Profile career history
+- [x] Profile behavioral signals
+- [x] Generate profiling reports
+
+---
+
 # Data Cleaning
 
 * [ ] Create cleaning module
