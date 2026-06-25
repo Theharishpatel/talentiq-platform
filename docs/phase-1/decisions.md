@@ -169,3 +169,63 @@ Loose coupling improves maintainability.
 Status
 
 Accepted
+
+# ADR-011
+
+Decision
+
+Use percentile-based scoring.
+
+Reason
+
+Dataset distributions vary across features and
+percentiles produce robust ranking signals.
+
+Status
+
+Accepted
+
+# ADR-012
+
+Decision
+
+Use independent feature engines.
+
+Reason
+
+Experience, behavior, recruitability, growth,
+and consistency should evolve independently.
+
+Status
+
+Accepted
+
+# ADR-013
+
+Decision
+
+Keep Honeypot Detection separate from ranking score.
+
+Reason
+
+Fraud risk and candidate quality are different
+signals and should not be mixed directly.
+
+Status
+
+Accepted
+
+# ADR-014
+
+Decision
+
+Generate feature scores during offline preprocessing.
+
+Reason
+
+Avoid expensive recalculation during search.
+
+Status
+
+Accepted
+

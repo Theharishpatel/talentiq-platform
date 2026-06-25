@@ -74,44 +74,34 @@
 
 # Data Cleaning
 
-* [ ] Create cleaning module
-* [ ] Define cleaning rules
-* [ ] Handle sentinel values (-1 → None)
-* [ ] Handle missing values
-* [ ] Remove duplicate skills
-* [ ] Trim whitespace
-* [ ] Standardize text formatting
-* [ ] Generate clean candidate records
-
----
-
-# Data Normalization
-
-* [ ] Normalize skills
-* [ ] Normalize education
-* [ ] Normalize locations
-* [ ] Normalize companies
-* [ ] Normalize job titles
-* [ ] Normalize dates
+* [x] Create cleaning module
+* [x] Define cleaning rules
+* [x] Handle sentinel values (-1 → None)
+* [x] Handle missing values
+* [x] Remove duplicate skills
+* [x] Trim whitespace
+* [x] Standardize text formatting
+* [x] Generate clean candidate records
 
 ---
 
 # Feature Engineering
 
-* [ ] Skill Count
-* [ ] Experience Years
-* [ ] Highest Degree
-* [ ] Certification Count
-* [ ] Employment Duration
-* [ ] GitHub Activity Feature
-* [ ] Recruitability Features
-* [ ] Career Growth Features
+* [x] Experience Engine
+* [x] Behavior Engine
+* [x] Recruitability Engine
+* [x] Growth Engine
+* [x] Consistency Engine
+* [x] Honeypot Features
+* [ ] Candidate Text Builder
+* [ ] Embedding Generation
+* [ ] Qdrant Index Build
 
 ---
 
 # Export
 
-* [ ] Export cleaned JSONL
+* [x] Export cleaned JSONL
 * [ ] Export clean_candidates.parquet
 * [ ] Export feature_candidates.parquet
 
@@ -120,9 +110,14 @@
 # Testing
 
 * [x] Model validation tests
-* [ ] Cleaning tests
+* [x] Cleaning tests
+* [x] Experience engine tests
+* [x] Behavior engine tests
+* [x] Recruitability engine tests
+* [x] Growth engine tests
+* [x] Consistency engine tests
+* [x] Honeypot feature tests
 * [ ] Normalization tests
-* [ ] Feature engineering tests
 * [ ] Export tests
 
 ---
@@ -139,9 +134,9 @@
 
 # Phase Completion Checklist
 
-* [ ] Cleaning pipeline completed
+* [x] Cleaning pipeline completed
 * [ ] Normalization pipeline completed
-* [ ] Feature engineering completed
+* [x] Feature engineering completed
 * [ ] Export pipeline completed
 * [ ] Tests passing
 * [ ] Documentation completed
