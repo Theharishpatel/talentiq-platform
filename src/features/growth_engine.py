@@ -99,7 +99,10 @@ def build_growth_features(
 
     growth_score = round(
         (
-            breadth_score *0.30 + skill_breadth_score * 0.25 + skill_maturity_score * 0.30 + education_score * 0.15
+            breadth_score *0.30 + 
+            skill_breadth_score * 0.25 + 
+            skill_maturity_score * 0.30 + 
+            education_score * 0.15
         ),
         2,
     )
