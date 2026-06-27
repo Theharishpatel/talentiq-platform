@@ -3,37 +3,33 @@ Templates used for candidate text generation.
 """
 
 CANDIDATE_TEMPLATE = """
-CANDIDATE
+## Current Role
 
-Candidate ID:
-{candidate_id}
-
-CURRENT ROLE
-
-Title:
 {current_title}
 
-Headline:
 {headline}
 
-Summary:
 {summary}
 
-Years of Experience:
-{years_experience}
+Experience:
+{years_experience} years
 
 Location:
 {location}
 
-SKILLS
+## Core Skills
 
 {skills}
 
-CAREER HISTORY
+## Career History
 
 {career_history}
 
-EDUCATION
+## Education
 
 {education}
+
+## Languages
+
+{languages}
 """
