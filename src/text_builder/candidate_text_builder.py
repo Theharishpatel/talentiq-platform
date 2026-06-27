@@ -6,41 +6,40 @@ from src.text_builder.templates import (
     CANDIDATE_TEMPLATE,
 )
 
+MAX_SUMMARY_LENGTH = 1000
+MAX_DESCRIPTION_LENGTH = 700
+
+
 def build_skills_section(
-        candidate: dict,
+    candidate: dict,
 ) -> str:
-    
-    skills = candidate.get(
+
+    skills = []
+
+    for skill in candidate.get(
         "skills",
-        []
-    )
-
-    skill_names = []
-
-    for skill in skills:
+        [],
+    ):
 
         name = skill.get(
-            "name"
+            "name",
         )
 
         if name:
+            skills.append(name)
 
-            skill_names.append(
-                name
-            )
+    skills = sorted(set(skills))
 
-    return "\n".join(
-        f"- {skill}"
-        for skill in skill_names
-    )
+    return ", ".join(skills)
+
 
 def build_career_section(
-        candidate: dict,
+    candidate: dict,
 ) -> str:
-    
+
     jobs = candidate.get(
         "career_history",
-        []
+        [],
     )
 
     lines = []
@@ -49,12 +48,17 @@ def build_career_section(
 
         title = job.get(
             "title",
-            "Unknonwn Role",
+            "Unknown Role",
         )
 
         company = job.get(
             "company",
-            "unknown company",
+            "Unknown Company",
+        )
+
+        industry = job.get(
+            "industry",
+            "",
         )
 
         duration = job.get(
@@ -62,23 +66,44 @@ def build_career_section(
             0,
         )
 
-        lines.append(
-            f"Role: {title}\n"
-            f"Company: {company}\n"
-            f"Duration: {duration} months\n"
+        description = job.get(
+            "description",
+            "",
+        ).strip()
+
+        if len(description) > MAX_DESCRIPTION_LENGTH:
+
+            description = (
+                description[:MAX_DESCRIPTION_LENGTH]
+                + "..."
+            )
+
+        section = (
+            f"{title}\n"
+            f"{company}\n"
+            f"Industry: {industry}\n"
+            f"Duration: {duration} months"
         )
 
-    return "\n".join(
-        lines
-    )
+        if description:
+
+            section += (
+                f"\nDescription:\n"
+                f"{description}"
+            )
+
+        lines.append(section)
+
+    return "\n\n".join(lines)
+
 
 def build_education_section(
-        candidate : dict,
-) -> str: 
-    
+    candidate: dict,
+) -> str:
+
     education = candidate.get(
         "education",
-        []
+        [],
     )
 
     lines = []
@@ -87,85 +112,133 @@ def build_education_section(
 
         degree = edu.get(
             "degree",
-            ""
+            "",
         )
 
         field = edu.get(
             "field_of_study",
-            ""
+            "",
         )
 
-        if degree and field:
+        institution = edu.get(
+            "institution",
+            "",
+        )
 
-            lines.append(
-                f"Degree: {degree}\n"
-                f"Field: {field}\n"
-            )
+        end_year = edu.get(
+            "end_year",
+            "",
+        )
 
-        elif degree:
+        text = ""
 
-            lines.append(
-                degree
-            )
+        if degree:
+            text += degree
 
-    return "\n".join(
-        lines
-    )
+        if field:
+            text += f" in {field}"
+
+        if institution:
+            text += f"\n{institution}"
+
+        if end_year:
+            text += f"\nGraduated: {end_year}"
+
+        if text:
+            lines.append(text)
+
+    return "\n\n".join(lines)
+
+
+def build_languages_section(
+    candidate: dict,
+) -> str:
+
+    languages = []
+
+    for lang in candidate.get(
+        "languages",
+        [],
+    ):
+
+        name = lang.get(
+            "language",
+        )
+
+        proficiency = lang.get(
+            "proficiency",
+        )
+
+        if name:
+
+            if proficiency:
+
+                languages.append(
+                    f"{name} ({proficiency})"
+                )
+
+            else:
+
+                languages.append(name)
+
+    return ", ".join(languages)
+
 
 def build_candidate_text(
-        candidate: dict,
+    candidate: dict,
 ) -> str:
-    
 
     profile = candidate.get(
         "profile",
-        {}
+        {},
     )
 
-    text = CANDIDATE_TEMPLATE.format(
+    summary = profile.get(
+        "summary",
+        "",
+    ).strip()
 
-        candidate_id = candidate.get(
-            "candidate_id",
-            ""
+    if len(summary) > MAX_SUMMARY_LENGTH:
 
-        ),
+        summary = (
+            summary[:MAX_SUMMARY_LENGTH]
+            + "..."
+        )
 
-        current_title = profile.get(
+    return CANDIDATE_TEMPLATE.format(
+
+        current_title=profile.get(
             "current_title",
-            ""
+            "",
         ),
 
-        headline = profile.get(
+        headline=profile.get(
             "headline",
-            ""
+            "",
         ),
 
-        summary = profile.get(
-            "summary",
-            ""
-        ),
+        summary=summary,
 
-        years_experience = profile.get(
+        years_experience=profile.get(
             "years_of_experience",
-            ""
+            "",
         ),
 
-        location = (
-            f"{profile.get('location', '')}, "
-            f"{profile.get('country', '')}"
+        location=f"{profile.get('location','')}, {profile.get('country','')}",
+
+        skills=build_skills_section(
+            candidate,
         ),
 
-        skills = build_skills_section(
-            candidate
+        career_history=build_career_section(
+            candidate,
         ),
 
-        career_history = build_career_section(
-            candidate
+        education=build_education_section(
+            candidate,
         ),
 
-        education = build_education_section(
-            candidate
+        languages=build_languages_section(
+            candidate,
         ),
-    )
-
-    return text.strip()
+    ).strip()
