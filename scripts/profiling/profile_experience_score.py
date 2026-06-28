@@ -4,7 +4,7 @@ from src.ingestion.jsonl_reader import (
     read_jsonl,
 )
 
-from src.features.experience_engine import (
+from features.experience.experience_engine import (
     build_experience_features,
 )
 

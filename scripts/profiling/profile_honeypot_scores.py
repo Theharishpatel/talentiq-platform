@@ -4,7 +4,7 @@ from src.ingestion.jsonl_reader import (
     read_jsonl,
 )
 
-from src.features.honeypot_features import (
+from features.honeypot.honeypot_features import (
     build_honeypot_features,
 )
 
