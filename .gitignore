@@ -12,8 +12,16 @@ __pycache__/
 
 # raw datasets
 data/raw/*.jsonl
-data/processed/*.jsonl
 
+#generated datasets
+data/processed/*.jsonl
+data/artifacts/*.parquet
+
+# Embeddings
+*.parquet
+
+# colab
+.ipyb_checkpoints/
 
 data/reports/*.csv
 data/reports/*.json
