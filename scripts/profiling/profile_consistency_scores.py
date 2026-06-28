@@ -4,7 +4,7 @@ from src.ingestion.jsonl_reader import (
     read_jsonl,
 )
 
-from src.features.consistency_engine import (
+from features.consistency.consistency_engine import (
     build_consistency_features,
 )
 

@@ -4,7 +4,7 @@ from src.ingestion.jsonl_reader import (
     read_jsonl,
 )
 
-from src.features.behavior_engine import (
+from features.behavior.behavior_engine import (
     build_behavior_features,
 )
 
