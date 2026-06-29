@@ -1,0 +1,28 @@
+Bhubaneswar, Odisha                      4321
+Noida, Uttar Pradesh                     4283
+Hyderabad, Telangana                     4283
+Jaipur, Rajasthan                        4268
+Bangalore, Karnataka                     4238
+Kolkata, West Bengal                     4230
+Indore, Madhya Pradesh                   4198
+Pune, Maharashtra                        4186
+Chennai, Tamil Nadu                      4164
+Delhi, Delhi                             4161
+Trivandrum, Kerala                       4151
+Ahmedabad, Gujarat                       4143
+Chandigarh, Chandigarh                   4128
+Coimbatore, Tamil Nadu                   4113
+Vizag, Andhra Pradesh                    4093
+Kochi, Kerala                            4073
+Mumbai, Maharashtra                      4043
+Gurgaon, Haryana                         4037
+Sydney                                   2579
+San Francisco                            2536
+Austin                                   2531
+New York                                 2518
+Toronto                                  2506
+London                                   2472
+Berlin                                   2469
+Singapore                                2453
+Dubai                                    2430
+Seattle                                  2393

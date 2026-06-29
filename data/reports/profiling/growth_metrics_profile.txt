@@ -1,0 +1,95 @@
+
+============================================================
+JOB COUNT
+============================================================
+
+count   : 100000
+min     : 1
+max     : 9
+avg     : 3.00
+
+p25     : 2
+p50     : 3
+p75     : 4
+p90     : 5
+
+
+============================================================
+SKILL COUNT
+============================================================
+
+count   : 100000
+min     : 5
+max     : 23
+avg     : 9.60
+
+p25     : 7
+p50     : 9
+p75     : 11
+p90     : 14
+
+
+============================================================
+SKILL DURATION
+============================================================
+
+count   : 960302
+min     : 0
+max     : 96
+avg     : 18.03
+
+p25     : 10
+p50     : 16
+p75     : 25
+p90     : 33
+
+
+============================================================
+EDUCATION COUNT
+============================================================
+
+count   : 100000
+min     : 1
+max     : 2
+avg     : 1.40
+
+p25     : 1
+p50     : 1
+p75     : 2
+p90     : 2
+
+
+============================================================
+TOP TITLES
+============================================================
+
+Business Analyst                    19042
+Graphic Designer                    19018
+Project Manager                     19016
+Mechanical Engineer                 18992
+Accountant                          18955
+Civil Engineer                      18882
+HR Manager                          18875
+Customer Support                    18842
+Operations Manager                  18799
+Marketing Manager                   18793
+Content Writer                      18786
+Sales Executive                     18695
+Software Engineer                   8081
+Full Stack Developer                6832
+Java Developer                      6776
+Cloud Engineer                      6732
+Mobile Developer                    6722
+.NET Developer                      6707
+QA Engineer                         6569
+DevOps Engineer                     6549
+Frontend Engineer                   6498
+Data Engineer                       1637
+Analytics Engineer                  1634
+Data Analyst                        1555
+Senior Data Engineer                1543
+Backend Engineer                    1526
+Senior Software Engineer            1479
+ML Engineer                         340
+Junior ML Engineer                  330
+AI Research Engineer                311

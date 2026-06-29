@@ -1,0 +1,62 @@
+
+============================================================
+CAREER PROFILE
+============================================================
+
+Total Jobs             : 300171
+Current Jobs           : 100000
+Missing Company        : 0
+Missing Title          : 0
+Negative Durations     : 0
+
+Duration Min           : 6
+Duration Max           : 228
+Duration Avg           : 28.24
+
+============================================================
+TOP COMPANIES
+============================================================
+Infosys                             23722
+Wipro                               23682
+Pied Piper                          23614
+Initech                             23590
+Wayne Enterprises                   23556
+Acme Corp                           23546
+Stark Industries                    23524
+Hooli                               23509
+TCS                                 23483
+Globex Inc                          23471
+Dunder Mifflin                      23416
+Swiggy                              3019
+Razorpay                            2926
+CRED                                2908
+Capgemini                           2895
+HCL                                 2894
+Zomato                              2883
+Flipkart                            2882
+Mindtree                            2879
+Accenture                           2871
+
+============================================================
+TOP TITLES
+============================================================
+Business Analyst                    19042
+Graphic Designer                    19018
+Project Manager                     19016
+Mechanical Engineer                 18992
+Accountant                          18955
+Civil Engineer                      18882
+HR Manager                          18875
+Customer Support                    18842
+Operations Manager                  18799
+Marketing Manager                   18793
+Content Writer                      18786
+Sales Executive                     18695
+Software Engineer                   8081
+Full Stack Developer                6832
+Java Developer                      6776
+Cloud Engineer                      6732
+Mobile Developer                    6722
+.NET Developer                      6707
+QA Engineer                         6569
+DevOps Engineer                     6549

@@ -1,0 +1,176 @@
+
+
+============================================================
+NUMERIC SIGNALS
+============================================================
+
+profile_completeness_score
+count      : 100000
+min      : 25.0
+max      : 99.9
+avg      : 56.76
+-1 count      : 0
+
+profile_views_received_30d
+count      : 100000
+min      : 0
+max      : 374
+avg      : 47.99
+-1 count      : 0
+
+applications_submitted_30d
+count      : 100000
+min      : 0
+max      : 24
+avg      : 5.39
+-1 count      : 0
+
+recruiter_response_rate
+count      : 100000
+min      : 0.02
+max      : 0.95
+avg      : 0.44
+-1 count      : 0
+
+avg_response_time_hours
+count      : 100000
+min      : 2.1
+max      : 280.0
+avg      : 132.70
+-1 count      : 0
+
+connection_count
+count      : 100000
+min      : 10
+max      : 1898
+avg      : 345.66
+-1 count      : 0
+
+endorsements_received
+count      : 100000
+min      : 0
+max      : 242
+avg      : 30.07
+-1 count      : 0
+
+notice_period_days
+count      : 100000
+min      : 0
+max      : 150
+avg      : 87.39
+-1 count      : 0
+
+github_activity_score
+count      : 100000
+min      : -1
+max      : 96.9
+avg      : 9.62
+-1 count      : 64637
+
+search_appearance_30d
+count      : 100000
+min      : 0
+max      : 1490
+avg      : 117.54
+-1 count      : 0
+
+saved_by_recruiters_30d
+count      : 100000
+min      : 0
+max      : 80
+avg      : 7.66
+-1 count      : 0
+
+interview_completion_rate
+count      : 100000
+min      : 0.3
+max      : 1.0
+avg      : 0.62
+-1 count      : 0
+
+offer_acceptance_rate
+count      : 100000
+min      : -1
+max      : 0.93
+avg      : -0.40
+-1 count      : 59554
+
+
+============================================================
+BOOLEAN SIGNALS
+============================================================
+
+open_to_work_flag
+True : 35339
+False : 64661
+
+willing_to_relocate
+False : 71196
+True : 28804
+
+verified_email
+True : 72003
+False : 27997
+
+verified_phone
+True : 61789
+False : 38211
+
+linkedin_connected
+False : 64001
+True : 35999
+
+
+============================================================
+ENUM SIGNALS
+============================================================
+
+preferred_work_mode
+onsite : 25000
+flexible : 25000
+hybrid : 25076
+remote : 24924
+
+
+============================================================
+DATE SIGNALS
+============================================================
+signup_date
+earliest : 2022-04-18
+latest : 2026-05-22
+last_active_date
+earliest : 2025-09-29
+latest : 2026-05-27
+
+
+============================================================
+SKILL ASSESSMENTS
+============================================================
+
+Top Assessed Skills:
+
+YOLO                                1195
+Feature Engineering                 1174
+CNN                                 1174
+Weights & Biases                    1173
+Forecasting                         1167
+Speech Recognition                  1159
+MLOps                               1159
+BentoML                             1157
+OpenCV                              1155
+Data Science                        1147
+Object Detection                    1145
+TTS                                 1140
+Diffusion Models                    1133
+Reinforcement Learning              1124
+ASR                                 1124
+GANs                                1122
+Image Classification                1120
+Time Series                         1111
+Computer Vision                     1111
+Kubeflow                            1105
+
+Assessment Score Range
+min : 20.0
+max : 97.3
+avg : 52.92
