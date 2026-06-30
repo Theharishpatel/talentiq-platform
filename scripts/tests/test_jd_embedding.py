@@ -11,32 +11,13 @@ from src.ranking.jd_embedding.pipeline import (
 )
 
 
-JD = """
-We are looking for a Senior Backend Engineer.
+from src.utils.document_loader import (
+    load_document,
+)
 
-Requirements
-
-- Python
-- FastAPI
-- PostgreSQL
-- Redis
-- Docker
-- Kubernetes
-- AWS
-- REST APIs
-- Microservices
-
-Experience
-
-5+ years
-
-Nice to have
-
-- Kafka
-- gRPC
-
-Remote
-"""
+JD = load_document(
+    "data/raw/job_description.docx"
+)
 
 
 def main() -> None:

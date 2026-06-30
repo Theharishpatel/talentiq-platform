@@ -1,7 +1,9 @@
 """
 Test Role Intelligence Engine.
 """
-
+from src.utils.document_loader import (
+    load_document,
+)
 from pprint import pprint
 
 from src.ranking.role_intelligence.builder import (
@@ -10,32 +12,10 @@ from src.ranking.role_intelligence.builder import (
 
 
 def main():
-
-    jd = """
-    We are looking for a Senior Backend Engineer.
-
-    Requirements
-
-    - Python
-    - FastAPI
-    - PostgreSQL
-    - Redis
-    - Docker
-    - Kubernetes
-    - AWS
-    - REST APIs
-    - Microservices
-
-    Experience:
-    5+ years
-
-    Nice to have
-
-    - Kafka
-    - gRPC
-
-    Remote
-    """
+    
+    jd = load_document(
+        "data/raw/job_description.docx"
+    )
 
     result = build_role_intelligence(jd)
 
