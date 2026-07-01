@@ -131,7 +131,7 @@ print("=" * 60)
 print("Top 10 Ranked Candidates")
 print("=" * 60)
 
-for candidate in ranked[:10]:
+for candidate in ranked[:100]:
 
     payload = candidate[
         "payload"
