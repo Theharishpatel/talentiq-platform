@@ -1,3 +1,5 @@
+<<<<<<< develop
+=======
 # """
 # Upload candidates to Qdrant.
 # """
@@ -140,6 +142,7 @@
 #     print("Upload Completed")
 #     print("=" * 60)
 #     print(f"Candidates Uploaded : {total}")
+>>>>>>> main
 
 
 """
