@@ -6,7 +6,7 @@ Usage
 python -m scripts.tests.test_search
 """
 
-from src.jd_embedding.pipeline import (
+from src.ranking.jd_embedding.pipeline import (
     build_jd_embedding,
 )
 
@@ -71,7 +71,7 @@ results = search_candidates(
 
     embedding=embedding,
 
-    limit=10,
+    limit=1000,
 
 )
 
