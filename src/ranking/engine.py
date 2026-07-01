@@ -66,11 +66,11 @@ def rank_candidates(
 
     ranked_candidates.sort(
 
-        key=lambda x: x[
-            "final_score"
-        ],
+        key=lambda candidate: (
+            -round(candidate["final_score"],2),
 
-        reverse=True,
+            candidate["payload"]["candidate_id"],
+        )
 
     )
 
