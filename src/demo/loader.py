@@ -11,7 +11,8 @@ import pandas as pd
 
 
 DEMO_DATASET = Path(
-    "data/demo_candidates.jsonl"
+    "data/demo_candidates.jsonl" \
+    ""
 )
 
 
