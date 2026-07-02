@@ -162,6 +162,18 @@ for rank, candidate in enumerate(
         "Highlights :"
     )
 
+    print()
+
+    print("Explanation :")
+
+    print(
+
+        reasoning[
+            "explanation"
+        ]
+
+    )
+
     for item in reasoning[
         "highlights"
     ]:
@@ -184,6 +196,30 @@ print("=" * 60)
 assert len(results) > 0
 
 for candidate in results:
+
+    assert (
+
+    "explanation"
+
+    in candidate[
+        "reasoning"
+    ]
+
+    )
+
+    assert (
+
+        len(
+
+            candidate[
+                "reasoning"
+            ][
+                "explanation"
+            ]
+
+        ) > 50
+
+    )
 
     assert (
         "reasoning"

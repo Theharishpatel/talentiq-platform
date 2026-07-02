@@ -78,6 +78,17 @@ print(result["final_score"])
 print()
 
 print("Summary")
+print()
+
+print("Recruiter Explanation")
+
+print(
+
+    reasoning[
+        "explanation"
+    ]
+
+)
 print(reasoning["summary"])
 
 print()
@@ -129,6 +140,14 @@ assert (
     "reasoning"
 
     in result
+
+)
+
+assert (
+
+    "explanation"
+
+    in reasoning
 
 )
 
