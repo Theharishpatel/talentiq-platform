@@ -140,7 +140,7 @@ submission.csv
 Clone the repository.
 
 ```bash
-git clone https://github.com/<your-username>/talentiq-platform.git
+git clone https://github.com/Theharishpatel/talentiq-platform
 cd talentiq-platform
 ```
 
@@ -317,11 +317,13 @@ Harish Patel
 
 Redrob AI Hackathon Submission
 
-#Team Members
+## Contributors
 
-- Vidita Rathore
-
-- Dharmanshu Kashyap
+| Name | GitHub |
+|------|---------|
+| Harish Patel | [@Theharishpatel](https://github.com/Theharishpatel) |
+| Vidita Rathore | [@Viditarathore](https://github.com/Viditarathore) |
+| Dharmanshu Kashyap | [@dharmanshukas100](https://github.com/dharmanshukas100) |
 
 
 ---

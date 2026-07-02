@@ -27,3 +27,6 @@ data/processed/*.parquet
 
 data/reports/*.csv
 data/reports/*.json
+
+#output
+output/*.csv
