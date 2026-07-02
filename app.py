@@ -105,6 +105,11 @@ def run_pipeline(
         ranked
     )
 
+    Path("outputs").mkdir(
+    parents=True,
+    exist_ok=True,
+)
+
     output_path = Path(
         "outputs/submission.csv"
     )
@@ -125,7 +130,7 @@ def run_pipeline(
 
         dataframe.head(20),
 
-        str(output_path),
+        output_path,
 
     )
 

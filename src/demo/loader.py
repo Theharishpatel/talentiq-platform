@@ -11,7 +11,7 @@ import pandas as pd
 
 
 DEMO_DATASET = Path(
-    "data/processed/candidate_index.parquet"
+    "data/demo_candidates.parquet"
 )
 
 
