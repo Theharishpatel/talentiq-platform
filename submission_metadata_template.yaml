@@ -1,0 +1,108 @@
+# Team identity
+team_name: "AITechCoder"
+
+primary_contact:
+  name: "Harish Patel"
+  email: "harishpatel.tech@gmail.com"
+  phone: "+91-8435310964"
+
+team_members:
+  - name: "Harish Patel"
+    email: "harishpatel.tech@gmail.com"
+    role: "Team Lead | Backend | ML Pipeline"
+
+  - name: "Dharmanshu Kashyap"
+    email: "dharmanshukashyap30@gmail.com"
+    role: "Role Intelligence & JD Embedding"
+
+  - name: "Vidita Rathore"
+    email: "viditarathore@gmail.com"
+    role: "Data Engineering"
+
+# Code
+
+github_repo: "https://github.com/Theharishpatel/talentiq-platform"
+
+sandbox_link: "https://huggingface.co/spaces/harishpatel/talentiq-demo"
+
+reproduce_command: >
+  python -m tools.run_pipeline 
+
+# Compute
+
+compute:
+
+  platform: "Ubuntu 22.04 | windows 11"
+
+  cpu_cores: 4
+
+  ram_gb: 8
+
+  python_version: "3.11"
+
+  os: "Ubuntu 22.04 | windows 11"
+
+  uses_gpu_for_inference: false
+
+  has_network_during_ranking: false
+
+  pre_computation_required: true
+
+  pre_computation_time_minutes: 50
+
+# AI Tools
+
+ai_tools_used:
+
+  - "ChatGPT"
+
+ai_usage_summary: |
+
+  ChatGPT was used for architecture discussions,
+  debugging, code review, and implementation guidance.
+
+  Candidate embeddings, ranking logic,
+  feature engineering, and reasoning pipeline
+  were implemented and validated by the team.
+
+  No candidate data was shared with external
+  AI services during ranking.
+
+# Methodology
+
+methodology_summary: |
+
+  TalentiQ is an offline semantic candidate ranking
+  system designed for recruiter-centric hiring.
+
+  The pipeline performs offline feature engineering
+  over candidate profiles, generates dense embeddings,
+  indexes candidates in Qdrant, extracts structured
+  information from Job Descriptions using Role
+  Intelligence, performs semantic retrieval,
+  applies a weighted multi-factor ranking model
+  (semantic similarity, experience,
+  recruitability, career growth, behavioral
+  signals, consistency, and risk), generates
+  recruiter-friendly reasoning, and exports the
+  top 100 candidates in the required submission
+  format.
+
+  The complete ranking process executes entirely
+  on CPU without any external API calls.
+
+# ============================================================================
+# Declaration
+# ============================================================================
+
+declarations:
+
+  read_submission_spec: true
+
+  code_is_original_work: true
+
+  no_collusion: true
+
+  honeypot_check_done: false
+
+  reproduction_tested: true
