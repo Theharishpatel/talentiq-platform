@@ -1,0 +1,75 @@
+
+============================================================
+EDUCATION PROFILE
+============================================================
+
+Total Education Records : 139778
+Missing Degree          : 0
+Missing Field           : 0
+Missing Institution     : 0
+Missing Tier            : 0
+Invalid Years           : 0
+
+============================================================
+DEGREES
+============================================================
+M.E.                 17650
+M.S.                 17604
+M.Sc                 17562
+M.Tech               17535
+Ph.D                 17526
+B.Tech               17465
+B.E.                 17259
+B.Sc                 17177
+
+============================================================
+TIERS
+============================================================
+tier_3               53220
+tier_4               51885
+tier_2               27821
+tier_1               6852
+
+============================================================
+TOP FIELDS
+============================================================
+Information Technology              12328
+Data Science                        12222
+Machine Learning                    12216
+Computer Engineering                12114
+Artificial Intelligence             12009
+Computer Science                    11868
+Statistics                          6762
+Chemical Engineering                6740
+Electronics                         6726
+Physics                             6726
+Civil Engineering                   6723
+MBA                                 6718
+Electrical Engineering              6714
+Mechanical Engineering              6696
+Commerce                            6670
+Mathematics                         6546
+
+============================================================
+TOP INSTITUTIONS
+============================================================
+Tier-3 Engineering College                    12995
+Local Engineering College                     12967
+Generic State University                      12966
+Regional Technical Institute                  12957
+Amity University                              6002
+Lovely Professional University                5986
+SRM Chennai                                   5958
+Bharati Vidyapeeth                            5953
+Symbiosis International                       5945
+VIT Chennai                                   5924
+Chandigarh University                         5876
+KIIT University                               5847
+Christ University                             5729
+COEP Pune                                     2620
+RV College of Engineering                     2582
+SRM University                                2560
+Anna University                               2544
+VJTI Mumbai                                   2538
+Delhi College of Engineering                  2537
+Manipal Institute of Technology               2532

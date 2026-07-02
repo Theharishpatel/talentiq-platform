@@ -1,0 +1,29 @@
+.venv/
+.env
+
+__pycache__/
+
+.pytest_cache/
+.ruff_cache/
+
+*.pyc
+.ipynb_checkpoints/
+
+
+# raw datasets
+data/raw/*.jsonl
+data/raw/*.docx
+
+
+#generated datasets
+data/processed/*.jsonl
+data/artifacts/*.parquet
+data/processed/*.parquet
+
+
+
+# colab
+.ipyb_checkpoints/
+
+data/reports/*.csv
+data/reports/*.json

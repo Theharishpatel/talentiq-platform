@@ -1,0 +1,268 @@
+CANDIDATE
+
+Candidate ID:
+CAND_0007234
+
+CURRENT ROLE
+
+Title:
+DevOps Engineer
+
+Headline:
+DevOps Engineer | Backend systems & APIs
+
+Summary:
+Software engineer with 4.2 years of experience across web, backend, and cloud systems. Strong fundamentals in software development and system design. My background is full-stack, but my comfort zone is the backend and the database. I've been keeping up with AI/ML at a self-learner level — taken some online courses, played with the OpenAI and Anthropic APIs, built a small RAG side project — but I haven't done it in a professional capacity yet. Open to roles where I can either deepen my software engineering work or, if the team is open to it, start contributing to ML-adjacent systems.
+
+Years of Experience:
+4.2
+
+Location:
+Pune, Maharashtra, India
+
+SKILLS
+
+- Learning to Rank
+- Salesforce CRM
+- Apache Beam
+- Databricks
+- TypeScript
+- Excel
+- React
+- pgvector
+- Reinforcement Learning
+- Vue.js
+- MongoDB
+- Hadoop
+- MLflow
+- JavaScript
+- gRPC
+- Rust
+
+CAREER HISTORY
+
+Role: DevOps Engineer
+Company: Acme Corp
+Duration: 50 months
+
+
+EDUCATION
+
+Degree: M.S.
+Field: Computer Engineering
+
+CANDIDATE
+
+Candidate ID:
+CAND_0021894
+
+CURRENT ROLE
+
+Title:
+Graphic Designer
+
+Headline:
+Graphic Designer | Driving business outcomes
+
+Summary:
+Professional with 7.5+ years of experience. I've spent my career in marketing manager roles, mostly focused on driving outcomes through process, people, and customer relationships. Lately I've been curious about how AI tools could augment my work — I've experimented with ChatGPT and a few other tools for productivity and content creation, and I think the space is exciting. Open to roles where I can apply my domain expertise alongside emerging AI capabilities.
+
+Years of Experience:
+7.5
+
+Location:
+Bhubaneswar, Odisha, India
+
+SKILLS
+
+- Accounting
+- Snowflake
+- TypeScript
+- SEO
+- Speech Recognition
+- Salesforce CRM
+- ETL
+- Agile
+- SQL
+- Apache Beam
+- FastAPI
+
+CAREER HISTORY
+
+Role: Graphic Designer
+Company: TCS
+Duration: 32 months
+
+Role: Business Analyst
+Company: Stark Industries
+Duration: 46 months
+
+Role: Graphic Designer
+Company: Wipro
+Duration: 10 months
+
+
+EDUCATION
+
+Degree: M.E.
+Field: Data Science
+
+Degree: Ph.D
+Field: Computer Engineering
+
+CANDIDATE
+
+Candidate ID:
+CAND_0042526
+
+CURRENT ROLE
+
+Title:
+Mechanical Engineer
+
+Headline:
+Mechanical Engineer | AI enthusiast | Building with LLMs
+
+Summary:
+Mechanical Engineer with 1.7+ years of experience driving outcomes in my domain. I have built strong functional expertise in the typical responsibilities of the role, including team management, stakeholder communication, and project delivery. Recently I've been excited about how AI and GenAI tools can augment my work. I've been taking online courses on RAG and vector databases, experimenting with LangChain and the OpenAI API for side projects, and exploring how LLMs can streamline workflows in my current function. Open to roles that combine my existing domain experience with emerging AI technologies — I think the most interesting opportunities are at this intersection. Looking for positions where I can contribute both my functional expertise and grow my AI capabilities.
+
+Years of Experience:
+1.7
+
+Location:
+Coimbatore, Tamil Nadu, India
+
+SKILLS
+
+- Apache Flink
+- Vue.js
+- ETL
+- Kafka
+- Figma
+- Java
+- Weights & Biases
+- Excel
+- Recommendation Systems
+- Pinecone
+- FAISS
+- RAG
+- Hugging Face Transformers
+- Vector Search
+- LLMs
+
+CAREER HISTORY
+
+Role: Mechanical Engineer
+Company: Initech
+Duration: 20 months
+
+
+EDUCATION
+
+Degree: M.E.
+Field: Electrical Engineering
+
+CANDIDATE
+
+Candidate ID:
+CAND_0092161
+
+CURRENT ROLE
+
+Title:
+Frontend Engineer
+
+Headline:
+Frontend Engineer | Full-stack development
+
+Summary:
+Software engineer with 2.2 years of experience across web, backend, and cloud systems. Strong fundamentals in software development and system design. Most of my work is conventional backend engineering — APIs, databases, queues, deployments. I've been keeping up with AI/ML at a self-learner level — taken some online courses, played with the OpenAI and Anthropic APIs, built a small RAG side project — but I haven't done it in a professional capacity yet. Open to roles where I can either deepen my software engineering work or, if the team is open to it, start contributing to ML-adjacent systems.
+
+Years of Experience:
+2.2
+
+Location:
+Delhi, Delhi, India
+
+SKILLS
+
+- Azure
+- PowerPoint
+- Airflow
+- Figma
+- Haystack
+- Accounting
+- LLMs
+- MongoDB
+- Kubeflow
+
+CAREER HISTORY
+
+Role: Frontend Engineer
+Company: Globex Inc
+Duration: 14 months
+
+Role: Mobile Developer
+Company: Mindtree
+Duration: 12 months
+
+
+EDUCATION
+
+Degree: M.S.
+Field: Computer Science
+
+CANDIDATE
+
+Candidate ID:
+CAND_0049594
+
+CURRENT ROLE
+
+Title:
+DevOps Engineer
+
+Headline:
+DevOps Engineer | Cloud & DevOps
+
+Summary:
+Software engineer with 1.4 years of experience across web, backend, and cloud systems. Strong fundamentals in software development and system design. Most of my work is conventional backend engineering — APIs, databases, queues, deployments. I've been keeping up with AI/ML at a self-learner level — taken some online courses, played with the OpenAI and Anthropic APIs, built a small RAG side project — but I haven't done it in a professional capacity yet. Open to roles where I can either deepen my software engineering work or, if the team is open to it, start contributing to ML-adjacent systems.
+
+Years of Experience:
+1.4
+
+Location:
+Chennai, Tamil Nadu, India
+
+SKILLS
+
+- Learning to Rank
+- Next.js
+- ETL
+- Excel
+- Hadoop
+- Milvus
+- FastAPI
+- Spring Boot
+- Diffusion Models
+- HTML
+- TypeScript
+- Rust
+- Tailwind
+- Databricks
+
+CAREER HISTORY
+
+Role: DevOps Engineer
+Company: Zomato
+Duration: 16 months
+
+
+EDUCATION
+
+Degree: M.Sc
+Field: Physics
+
+Degree: B.Sc
+Field: Machine Learning
+
