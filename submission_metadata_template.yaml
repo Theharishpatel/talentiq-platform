@@ -1,6 +1,4 @@
-# ============================================================================
 # Team identity
-# ============================================================================
 team_name: "AITechCoder"
 
 primary_contact:
@@ -21,20 +19,16 @@ team_members:
     email: "viditarathore@gmail.com"
     role: "Data Engineering"
 
-# ============================================================================
 # Code
-# ============================================================================
 
 github_repo: "https://github.com/Theharishpatel/talentiq-platform"
 
 sandbox_link: "https://huggingface.co/spaces/harishpatel/talentiq-demo"
 
 reproduce_command: >
-  python -m tools.run_pipeline
+  python -m tools.run_pipeline 
 
-# ============================================================================
 # Compute
-# ============================================================================
 
 compute:
 
@@ -56,9 +50,7 @@ compute:
 
   pre_computation_time_minutes: 50
 
-# ============================================================================
 # AI Tools
-# ============================================================================
 
 ai_tools_used:
 
@@ -76,9 +68,7 @@ ai_usage_summary: |
   No candidate data was shared with external
   AI services during ranking.
 
-# ============================================================================
 # Methodology
-# ============================================================================
 
 methodology_summary: |
 
