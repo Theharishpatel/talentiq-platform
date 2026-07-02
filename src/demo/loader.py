@@ -11,7 +11,7 @@ import pandas as pd
 
 
 DEMO_DATASET = Path(
-    "data/demo_candidates.parquet"
+    "data/demo_candidates.jsonl"
 )
 
 
@@ -30,8 +30,9 @@ def load_demo_candidates(
     pd.DataFrame
     """
 
-    dataframe = pd.read_parquet(
+    dataframe = pd.read_json(
         DEMO_DATASET,
+        lines=True,
     )
 
     return dataframe.head(
