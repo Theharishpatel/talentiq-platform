@@ -7,29 +7,151 @@ candidate based on the
 ranking score breakdown.
 """
 
-from src.reasoning.templates import (
-    EXCELLENT_MATCH,
-    STRONG_MATCH,
-    GOOD_MATCH,
-    MODERATE_MATCH,
-    HIGH_SIMILARITY,
-    GOOD_SIMILARITY,
-    HIGH_EXPERIENCE,
-    GOOD_EXPERIENCE,
-    HIGH_RECRUITABILITY,
-    GOOD_RECRUITABILITY,
-    HIGH_GROWTH,
-    GOOD_GROWTH,
-    HIGH_BEHAVIOR,
-    GOOD_BEHAVIOR,
-    HIGH_CONSISTENCY,
-    GOOD_CONSISTENCY,
-    LOW_RISK,
-    MEDIUM_RISK,
-    HIGH_RISK,
-    OPEN_TO_WORK,
-    NO_REASON,
-)
+import random
+
+from src.reasoning.templates import *
+
+
+def choose(
+    templates,
+    seed=None,
+):
+    """
+    Deterministic template selection.
+    """
+
+    if seed is None:
+
+        return random.choice(
+            templates
+        )
+
+    index = abs(
+
+        hash(str(seed))
+
+    ) % len(templates)
+
+    return templates[index]
+
+
+def format_skills(
+
+    skills,
+
+):
+
+    if not skills:
+
+        return None
+
+    if isinstance(
+
+        skills,
+
+        str,
+
+    ):
+
+        skills = [
+
+            s.strip()
+
+            for s in skills.split(",")
+
+            if s.strip()
+
+        ]
+
+    priority = [
+
+        "Python",
+
+        "Java",
+
+        "JavaScript",
+
+        "React",
+
+        "Node.js",
+
+        "SQL",
+
+        "Docker",
+
+        "Kubernetes",
+
+        "AWS",
+
+        "Azure",
+
+        "GCP",
+
+    ]
+
+    ordered = []
+
+    for p in priority:
+
+        if p in skills:
+
+            ordered.append(
+
+                p
+
+            )
+
+    for skill in skills:
+
+        if skill not in ordered:
+
+            ordered.append(
+
+                skill
+
+            )
+
+    return ", ".join(
+
+        ordered[:4]
+
+    )
+
+
+def add_highlight(highlights, text):
+
+    """
+    Avoid duplicate highlights.
+    """
+
+    if text and text not in highlights:
+        highlights.append(text)
+
+
+def build_explanation(
+    summary: str,
+    highlights: list[str],
+) -> str:
+    """
+    Build a recruiter-friendly
+    explanation.
+    """
+
+    explanation = summary.rstrip(".")
+
+    if highlights:
+
+        explanation += ". "
+
+        explanation += " ".join(
+
+            h.rstrip(".") + "."
+
+            for h in highlights
+
+        )
+
+    return explanation
 
 
 def generate_reason(
@@ -67,158 +189,368 @@ def generate_reason(
 
     highlights = []
 
-    # ----- Semantic Match -----
+    title = payload.get(
+        "current_title",
+        ""
+    )
 
-    if breakdown["similarity"] >= 30:
+    company = payload.get(
+        "current_company",
+        ""
+    )
 
-        highlights.append(
-            HIGH_SIMILARITY
+    years = payload.get(
+        "years_experience",
+        0
+    )
+
+    candidate_seed = payload.get(
+    "candidate_id",
+    ""
+    )
+
+    skills = format_skills(
+
+        payload.get(
+            "skills",
+            []
         )
 
-    elif breakdown["similarity"] >= 20:
+    )
 
-        highlights.append(
-            GOOD_SIMILARITY
+    # ------------------------------
+    # Candidate Facts
+    # ------------------------------
+
+    # ======================================================
+    # PROFILE SUMMARY
+    # ======================================================
+
+    profile = []
+
+    if title:
+
+        profile.append(
+
+            f"{title}"
+
         )
 
-    # ----- Experience ------
+    if company:
 
-    if breakdown["experience"] >= 15:
+        if profile:
 
-        highlights.append(
-            HIGH_EXPERIENCE
+            profile[-1] += (
+
+                f" at {company}"
+
+            )
+
+    if years:
+
+        if profile:
+
+            profile[-1] += (
+
+                f" with {years:.1f} years of professional experience"
+
+            )
+
+    if profile:
+
+        add_highlight(
+
+            highlights,
+
+            "Currently working as "
+
+            + profile[0]
+
+            + "."
+
         )
 
-    elif breakdown["experience"] >= 10:
+    if skills:
 
-        highlights.append(
-            GOOD_EXPERIENCE
+        add_highlight(
+
+            highlights,
+
+            f"Technical expertise includes {skills}."
+
         )
 
-    # ------ Recruitability ------
+    # ======================================================
+    # SEMANTIC MATCH
+    # ======================================================
 
-    if breakdown["recruitability"] >= 12:
+    similarity = breakdown.get("similarity", 0)
 
-        highlights.append(
-            HIGH_RECRUITABILITY
+    if similarity >= 35:
+
+        add_highlight(
+            highlights,
+            choose(VERY_HIGH_SIMILARITY),
         )
 
-    elif breakdown["recruitability"] >= 8:
+    elif similarity >= 30:
 
-        highlights.append(
-            GOOD_RECRUITABILITY
+        add_highlight(
+            highlights,
+            choose(
+                HIGH_SIMILARITY,
+                candidate_seed,
+            ),
         )
 
-    # ----- Career Growth -----
+    elif similarity >= 22:
 
-    if breakdown["growth"] >= 8:
-
-        highlights.append(
-            HIGH_GROWTH
+        add_highlight(
+            highlights,
+            choose(GOOD_SIMILARITY),
         )
 
-    elif breakdown["growth"] >= 5:
+    else:
 
-        highlights.append(
-            GOOD_GROWTH
+        add_highlight(
+            highlights,
+            choose(MODERATE_SIMILARITY),
         )
 
-    # ------ Behavior ----
+    # ======================================================
+    # EXPERIENCE
+    # ======================================================
 
-    if breakdown["behavior"] >= 8:
+    exp_score = breakdown.get("experience", 0)
 
-        highlights.append(
-            HIGH_BEHAVIOR
+    if years >= 10:
+
+        add_highlight(
+            highlights,
+            choose(EXPERT_EXPERIENCE),
         )
 
-    elif breakdown["behavior"] >= 5:
+    elif exp_score >= 15:
 
-        highlights.append(
-            GOOD_BEHAVIOR
+        add_highlight(
+            highlights,
+            choose(HIGH_EXPERIENCE),
         )
 
-    # ----- Consistency -----
+    elif exp_score >= 10:
 
-    if breakdown["consistency"] >= 8:
-
-        highlights.append(
-            HIGH_CONSISTENCY
+        add_highlight(
+            highlights,
+            choose(GOOD_EXPERIENCE),
         )
 
-    elif breakdown["consistency"] >= 5:
+    elif exp_score >= 5:
 
-        highlights.append(
-            GOOD_CONSISTENCY
+        add_highlight(
+            highlights,
+            choose(MODERATE_EXPERIENCE),
         )
 
-    # ------ Risk ------
+    else:
+
+        add_highlight(
+            highlights,
+            choose(LIMITED_EXPERIENCE),
+        )
+
+    # ======================================================
+    # RECRUITABILITY
+    # ======================================================
+
+    recruitability = payload.get(
+        "recruitability_score",
+        0,
+    )
+
+    if recruitability >= 90:
+
+        add_highlight(
+            highlights,
+            choose(EXCELLENT_RECRUITABILITY),
+        )
+
+    elif recruitability >= 75:
+
+        add_highlight(
+            highlights,
+            choose(HIGH_RECRUITABILITY),
+        )
+
+    elif recruitability >= 60:
+
+        add_highlight(
+            highlights,
+            choose(GOOD_RECRUITABILITY),
+        )
+
+    elif recruitability >= 40:
+
+        add_highlight(
+            highlights,
+            choose(MODERATE_RECRUITABILITY),
+        )
+
+    else:
+
+        add_highlight(
+            highlights,
+            choose(LOW_RECRUITABILITY),
+        )
+
+    # ======================================================
+    # GROWTH
+    # ======================================================
+
+    growth = payload.get(
+        "growth_score",
+        0,
+    )
+
+    if growth < 40:
+
+        add_highlight(
+            highlights,
+            choose(LOW_GROWTH_CONCERN),
+        )
+
+    # ======================================================
+    # BEHAVIOR
+    # ======================================================
+
+    behavior = payload.get(
+        "behavior_score",
+        0,
+    )
+
+    if behavior < 40:
+
+        add_highlight(
+            highlights,
+            choose(LOW_BEHAVIOR_CONCERN),
+        )
+
+    # ======================================================
+    # RISK
+    # ======================================================
 
     risk = payload.get(
         "risk_score",
         100,
     )
 
-    if risk <= 20:
+    if risk <= 10:
 
-        highlights.append(
-            LOW_RISK
+        add_highlight(
+            highlights,
+            choose(VERY_LOW_RISK),
         )
 
-    elif risk <= 50:
+    elif risk <= 20:
 
-        highlights.append(
-            MEDIUM_RISK
+        add_highlight(
+            highlights,
+            choose(LOW_RISK),
+        )
+
+    elif risk <= 45:
+
+        add_highlight(
+            highlights,
+            choose(MEDIUM_RISK),
+        )
+
+    elif risk <= 70:
+
+        add_highlight(
+            highlights,
+            choose(HIGH_RISK),
         )
 
     else:
 
-        highlights.append(
-            HIGH_RISK
+        add_highlight(
+            highlights,
+            choose(VERY_HIGH_RISK),
         )
 
-    # -----  Open To Work -----
+        add_highlight(
+            highlights,
+            choose(HIGH_RISK_CONCERN),
+        )
+
+    # ======================================================
+    # OPEN TO WORK
+    # ======================================================
 
     if payload.get(
         "open_to_work",
         False,
     ):
 
-        highlights.append(
-            OPEN_TO_WORK
+        add_highlight(
+            highlights,
+            choose(OPEN_TO_WORK),
         )
 
-    # ----- Fallback -----
+    # ======================================================
+    # SHUFFLE
+    # ======================================================
 
-    if not highlights:
+    profile = highlights[:4]
 
-        highlights.append(
-            NO_REASON
-        )
+    remaining = highlights[4:]
 
-    # ----- Summary -----
+    random.shuffle(
+        remaining
+    )
+
+    highlights = profile + remaining
+
+    # ======================================================
+    # SUMMARY
+    # ======================================================
 
     if final_score >= 90:
 
-        summary = EXCELLENT_MATCH
+        summary = choose(
+            EXCELLENT_MATCH
+        )
 
     elif final_score >= 80:
 
-        summary = STRONG_MATCH
+        summary = choose(
+            STRONG_MATCH
+        )
 
     elif final_score >= 70:
 
-        summary = GOOD_MATCH
+        summary = choose(
+            GOOD_MATCH
+        )
 
     else:
 
-        summary = MODERATE_MATCH
+        summary = choose(
+            MODERATE_MATCH
+        )
 
     return {
 
-        "summary":
+        "summary": summary,
+
+        "highlights": highlights,
+
+        "explanation": build_explanation(
+
             summary,
 
-        "highlights":
             highlights,
+
+        ),
 
     }
