@@ -130,7 +130,7 @@ def run_pipeline(
 
         dataframe.head(20),
 
-        output_path,
+        str(output_path),
 
     )
 
