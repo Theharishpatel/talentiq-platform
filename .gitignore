@@ -18,9 +18,9 @@ data/raw/*.docx
 #generated datasets
 data/processed/*.jsonl
 data/artifacts/*.parquet
+data/processed/*.parquet
 
-# Embeddings
-*.parquet
+
 
 # colab
 .ipyb_checkpoints/
